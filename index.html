@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Les Chocolats de Yannick Alléno — Le chocolat autrement</title>
+  <meta name="description" content="Maison de chocolat gastronomique fondée par Yannick Alléno et Aurélien Rivoire. Extractions, fermentations, terroirs : un cacao travaillé comme un plat. Trois adresses à Paris, livraison en 72 h.">
+  <link rel="canonical" href="https://www.chocolats-yannickalleno.com/">
+  <link rel="alternate" hreflang="fr" href="https://www.chocolats-yannickalleno.com/">
+  <link rel="alternate" hreflang="en" href="https://www.chocolats-yannickalleno.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://www.chocolats-yannickalleno.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Les Chocolats de Yannick Alléno — Le chocolat autrement">
+  <meta property="og:description" content="Un chocolat pensé par un cuisinier, pas par un confiseur. Trois adresses à Paris, livraison en 72 h.">
+  <meta property="og:image" content="assets/img/og.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="theme-color" content="#120B08">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.184.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.184.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="main.js"></script>
+  <!-- Filet de sécurité : le pré-loader disparaît même si les modules CDN ne répondent pas -->
+  <script>setTimeout(function () { var p = document.getElementById('preloader'); if (p) p.classList.add('is-done'); }, 1600);</script>
+  <noscript><style>#preloader { display: none; }</style></noscript>
+</head>
+<body>
+
+<div id="preloader" aria-hidden="true"><i></i></div>
+
+<header class="header" id="header">
+  <nav class="header__nav" aria-label="Navigation principale">
+    <ul>
+      <li class="has-mega">
+        <a href="#collection" aria-haspopup="true" aria-controls="mega">Collection</a>
+        <div class="mega" id="mega" aria-label="Toutes les gammes">
+          <div class="mega__col">
+            <p class="mega__title">Coffrets</p>
+            <ul>
+              <li><a href="produit.html" data-img="assets/img/range-coffrets.webp" data-label="Coffrets">Coffrets de pralinés</a></li>
+              <li><a href="produit.html" data-img="assets/img/range-coffrets.webp" data-label="Coffrets">Coffrets de ganaches</a></li>
+              <li><a href="produit.html" data-img="assets/img/range-sticks.webp" data-label="Sticks">Coffrets de sticks</a></li>
+              <li><a href="produit.html" data-img="assets/img/range-sables.webp" data-label="Sablés">Coffrets de sablés bretons</a></li>
+              <li><a href="produit.html" data-img="assets/img/range-coffrets.webp" data-label="Coffrets">Coffrets collection</a></li>
+              <li><a href="produit.html" data-img="assets/img/range-coffrets.webp" data-label="Coffrets">Coffrets à offrir</a></li>
+            </ul>
+          </div>
+          <div class="mega__col">
+            <p class="mega__title">Tablettes</p>
+            <ul>
+              <li><a href="produit.html" data-img="assets/img/range-tablettes.webp" data-label="Tablettes">Tablettes Terroirs de France</a></li>
+              <li><a href="produit.html" data-img="assets/img/range-tablettes.webp" data-label="Tablettes">Tablettes Gourmandes</a></li>
+              <li><a href="produit.html" data-img="assets/img/range-tablettes.webp" data-label="Tablettes">Tablettes Pures Origines</a></li>
+            </ul>
+          </div>
+          <div class="mega__col">
+            <p class="mega__title">Douceurs</p>
+            <ul>
+              <li><a href="produit.html" data-img="assets/img/range-confits.webp" data-label="Confits">Confits de fruits</a></li>
+              <li><a href="produit.html" data-img="assets/img/range-confits.webp" data-label="Confits">Confits chocolatés</a></li>
+              <li><a href="produit.html" data-img="assets/img/range-sticks.webp" data-label="Sticks">Petits plaisirs</a></li>
+            </ul>
+          </div>
+          <div class="mega__col">
+            <p class="mega__title">Épicerie fine</p>
+            <ul>
+              <li><a href="produit.html" data-img="assets/img/range-vanille.webp" data-label="Vanille">Gousses de vanille</a></li>
+            </ul>
+          </div>
+          <figure class="mega__img">
+            <img id="mega-img" src="assets/img/range-coffrets.webp" width="1200" height="1500" alt="" loading="lazy">
+            <figcaption id="mega-caption">Coffrets</figcaption>
+          </figure>
+        </div>
+      </li>
+      <li><a href="#chefs">Maison</a></li>
+      <li><a href="#entreprise">Entreprise</a></li>
+      <li><a href="#adresses">Adresses</a></li>
+    </ul>
+  </nav>
+  <a class="header__logo" href="index.html" aria-label="Les Chocolats de Yannick Alléno, accueil">Les Chocolats de Yannick Alléno</a>
+  <div class="header__tools">
+    <button type="button" aria-label="Rechercher"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+    <nav class="lang" aria-label="Langue"><a href="index.html" aria-current="page" lang="fr">FR</a><span aria-hidden="true">/</span><a href="en/index.html" lang="en" hreflang="en">EN</a></nav>
+    <a href="pages/compte.html" aria-label="Mon compte"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></a>
+    <button type="button" class="cart" id="cart" aria-label="Panier, 0 article"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-count" id="cart-count" aria-hidden="true"></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero : canvas WebGL fixé sous le texte, H1 réel dans le DOM -->
+  <section class="hero" id="hero" aria-label="Introduction">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <picture class="hero__fallback" id="hero-fallback">
+      <source srcset="assets/img/hero-fallback.webp" type="image/webp">
+      <img src="assets/img/hero-fallback.webp" width="1920" height="1080" alt="Tablette de chocolat noir sur fond cacao" fetchpriority="high">
+    </picture>
+    <h1 class="hero__title" id="hero-title"><span class="line">Le chocolat</span><span class="line line--it">autrement.</span></h1>
+    <p class="hero__tagline" id="hero-tagline">Deux chefs. Un cuisinier, un pâtissier. Un cacao qu'on travaille comme un plat.</p>
+    <p class="hero__cue" id="hero-cue" aria-hidden="true">Faire défiler</p>
+  </section>
+
+  <!-- La collection -->
+  <section class="section collection" id="collection" aria-label="La collection">
+    <div class="collection__spacer" aria-hidden="true"></div>
+    <div class="collection__body" id="collection-body">
+      <div class="section__head">
+        <div><p class="eyebrow">La collection</p><h2 class="h2">Six façons de travailler la fève.</h2></div>
+        <p class="lead">Chaque gamme part d'une technique de cuisine : extraction, confit, torréfaction basse, fermentation longue.</p>
+      </div>
+      <div class="tiles">
+        <a class="tile" href="produit.html">
+          <picture><source srcset="assets/img/range-coffrets.webp" type="image/webp"><img src="assets/img/range-coffrets.webp" width="1200" height="1500" alt="Coffret de chocolats ouvert sur fond sombre" loading="lazy"></picture>
+          <h3 class="tile__title">Coffrets</h3>
+        </a>
+        <a class="tile" href="produit.html">
+          <picture><source srcset="assets/img/range-tablettes.webp" type="image/webp"><img src="assets/img/range-tablettes.webp" width="1200" height="1500" alt="Tablette de chocolat noir posée sur fond sombre" loading="lazy"></picture>
+          <h3 class="tile__title">Tablettes</h3>
+        </a>
+        <a class="tile" href="produit.html">
+          <picture><source srcset="assets/img/range-sticks.webp" type="image/webp"><img src="assets/img/range-sticks.webp" width="1200" height="1500" alt="Sticks de chocolat alignés dans leur coffret" loading="lazy"></picture>
+          <h3 class="tile__title">Sticks</h3>
+        </a>
+        <a class="tile" href="produit.html">
+          <picture><source srcset="assets/img/range-confits.webp" type="image/webp"><img src="assets/img/range-confits.webp" width="1200" height="1500" alt="Pot de confit de fruits au chocolat" loading="lazy"></picture>
+          <h3 class="tile__title">Confits</h3>
+        </a>
+        <a class="tile" href="produit.html">
+          <picture><source srcset="assets/img/range-sables.webp" type="image/webp"><img src="assets/img/range-sables.webp" width="1200" height="1500" alt="Sablés bretons enrobés de chocolat" loading="lazy"></picture>
+          <h3 class="tile__title">Sablés</h3>
+        </a>
+        <a class="tile" href="produit.html">
+          <picture><source srcset="assets/img/range-vanille.webp" type="image/webp"><img src="assets/img/range-vanille.webp" width="1200" height="1500" alt="Trois gousses de vanille dans leur étui" loading="lazy"></picture>
+          <h3 class="tile__title">Vanille</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collection du moment -->
+  <section class="section moment" id="moment" aria-label="Collection du moment">
+    <div class="moment__text">
+      <p class="eyebrow">Collection du moment</p>
+      <h2 class="h2">Les Sablés de Rentrée</h2>
+      <p class="lead">Un beurre demi-sel de baratte, une farine de blé noir torréfiée, un chocolat noir à 70 % cassé au couteau. Le sablé cuit à 160 °C jusqu'à la friabilité exacte, puis repose douze heures avant l'enrobage. Série courte, jusqu'à épuisement.</p>
+    </div>
+    <div class="moment__right">
+      <div class="moment__track" id="moment-track">
+        <article class="card" data-product>
+          <div class="card__media"><picture><source srcset="assets/img/rentree-1.webp" type="image/webp"><img src="assets/img/rentree-1.webp" width="1000" height="1250" alt="Sablés bretons enrobés de chocolat noir 70 %" loading="lazy"></picture></div>
+          <h3 class="card__name">Sablés bretons, chocolat noir 70 %</h3>
+          <div class="card__row"><p class="price">18 €</p><button type="button" class="btn btn--line" data-add><span>Ajouter</span></button></div>
+        </article>
+        <article class="card" data-product>
+          <div class="card__media"><picture><source srcset="assets/img/rentree-2.webp" type="image/webp"><img src="assets/img/rentree-2.webp" width="1000" height="1250" alt="Sablés bretons au blé noir et praliné" loading="lazy"></picture></div>
+          <h3 class="card__name">Sablés bretons, blé noir et praliné</h3>
+          <div class="card__row"><p class="price">18 €</p><button type="button" class="btn btn--line" data-add><span>Ajouter</span></button></div>
+        </article>
+        <article class="card" data-product>
+          <div class="card__media"><picture><source srcset="assets/img/rentree-3.webp" type="image/webp"><img src="assets/img/rentree-3.webp" width="1000" height="1250" alt="Coffret de Rentrée réunissant les trois sablés" loading="lazy"></picture></div>
+          <h3 class="card__name">Coffret de Rentrée, les trois sablés</h3>
+          <div class="card__row"><p class="price">48 €</p><button type="button" class="btn btn--line" data-add><span>Ajouter</span></button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Les deux chefs -->
+  <section class="section chefs" id="chefs" aria-label="Les deux chefs">
+    <div class="diptych" id="diptych">
+      <picture><source srcset="assets/img/chef-rivoire.webp" type="image/webp"><img src="assets/img/chef-rivoire.webp" width="1200" height="1600" alt="Portrait en noir et blanc d'Aurélien Rivoire, chef pâtissier" loading="lazy"></picture>
+      <picture class="diptych__top"><source srcset="assets/img/chef-alleno.webp" type="image/webp"><img src="assets/img/chef-alleno.webp" width="1200" height="1600" alt="Portrait en noir et blanc de Yannick Alléno, chef cuisinier" loading="lazy"></picture>
+      <p class="diptych__name diptych__name--l"><small>Le cuisinier</small>Yannick Alléno</p>
+      <p class="diptych__name diptych__name--r"><small>Le pâtissier</small>Aurélien Rivoire</p>
+      <div class="diptych__handle" role="slider" tabindex="0" aria-label="Révéler l'un ou l'autre portrait" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-orientation="horizontal"></div>
+    </div>
+    <div class="chefs__cols">
+      <div class="reveal">
+        <p class="chefs__num">3<small>étoiles, Pavillon Ledoyen</small></p>
+        <h2 class="h2" style="font-size: var(--fs-h3);">La vision du cuisinier</h2>
+        <p class="lead">Yannick Alléno aborde le cacao comme une sauce : par l'extraction. Les fèves sont infusées à froid, réduites, concentrées, pour isoler ce qui donne au chocolat sa longueur plutôt que son sucre. Les terroirs se lisent comme des crus.</p>
+      </div>
+      <div class="reveal">
+        <p class="chefs__num">72<small>heures de fermentation</small></p>
+        <h2 class="h2" style="font-size: var(--fs-h3);">La technique du pâtissier</h2>
+        <p class="lead">Aurélien Rivoire tient les températures. Fermentation contrôlée des fèves sur 72 heures, torréfaction basse, tempérage à 31,5 °C pour une cassure nette et un fondant à la température du corps. La texture se décide au dixième de degré.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terroirs de France -->
+  <section class="section terroirs" id="terroirs" aria-label="Terroirs de France">
+    <div class="reveal">
+      <p class="eyebrow">Tablettes Terroirs de France</p>
+      <h2 class="h2">Le cacao vient d'ailleurs. Le reste vient d'ici.</h2>
+      <p class="lead" style="margin-top: var(--s-3);">Six tablettes, six produits français choisis pour ce qu'ils font au cacao : le sel qui allonge, la noix qui tanne, le miel qui adoucit.</p>
+      <ul class="terroirs__list" aria-label="Liste des terroirs">
+        <li><button type="button" data-for="guerande">Guérande, Loire-Atlantique</button></li>
+        <li><button type="button" data-for="isigny">Isigny, Normandie</button></li>
+        <li><button type="button" data-for="espelette">Espelette, Pays basque</button></li>
+        <li><button type="button" data-for="lavande">Sault, Provence</button></li>
+        <li><button type="button" data-for="grenoble">Grenoble, Isère</button></li>
+        <li><button type="button" data-for="cervione">Cervione, Corse</button></li>
+      </ul>
+    </div>
+    <div class="map" id="map">
+      <svg viewBox="0 0 470 445" role="img" aria-label="Carte de France stylisée avec les six terroirs des tablettes">
+        <path class="outline" d="M238.5 9.2 L217.5 15.3 L208.5 39.2 L204.0 54.5 L166.5 69.8 L153.0 85.0 L127.5 85.0 L114.0 69.8 L105.0 69.8 L114.0 91.6 L117.0 115.5 L102.0 115.5 L81.0 119.9 L54.0 109.0 L19.5 119.9 L30.0 130.8 L19.5 141.7 L36.0 152.6 L61.5 157.0 L79.5 165.7 L96.0 175.3 L108.0 209.3 L127.5 224.5 L130.5 248.5 L126.0 289.9 L117.0 331.4 L108.6 346.2 L141.0 366.2 L183.0 370.6 L214.5 383.7 L253.5 385.9 L255.0 357.5 L279.0 337.9 L307.5 346.6 L324.0 353.2 L345.0 359.7 L360.0 355.3 L379.5 331.4 L388.5 327.0 L372.0 307.4 L369.0 281.2 L373.5 270.3 L366.0 252.9 L375.0 235.4 L366.0 222.4 L346.5 224.5 L345.0 213.6 L357.0 198.4 L372.0 170.0 L390.0 161.3 L393.0 130.8 L408.0 102.5 L372.0 91.6 L354.0 78.5 L336.0 76.3 L309.0 54.5 L288.0 58.9 L270.0 34.9 L258.0 26.2 Z"/>
+        <path class="outline" d="M442.5 361.9 L447.0 379.3 L448.5 401.1 L444.0 425.1 L438.0 432.5 L426.0 425.1 L420.0 409.8 L424.5 396.8 L418.5 379.3 L432.0 372.8 Z"/>
+        <g class="terroir" id="t-guerande" tabindex="0" role="button" aria-label="Guérande : Tablette Fleur de sel de Guérande" data-name="Tablette Fleur de sel de Guérande" data-text="Le sel arrive après le cacao, sur la langue, et allonge l'amertume." data-img="assets/img/tablette-guerande.webp"><circle class="halo" cx="89.1" cy="173.1" r="9"/><circle class="dot" cx="89.1" cy="173.1" r="5"/><circle class="hit" cx="89.1" cy="173.1" r="16"/></g>
+        <g class="terroir" id="t-isigny" tabindex="0" role="button" aria-label="Isigny : Tablette Caramel beurre salé d'Isigny" data-name="Tablette Caramel beurre salé d'Isigny" data-text="Un caramel cuit à 172 °C, plié dans un noir à 64 %." data-img="assets/img/tablette-isigny.webp"><circle class="halo" cx="129" cy="86.3" r="9"/><circle class="dot" cx="129" cy="86.3" r="5"/><circle class="hit" cx="129" cy="86.3" r="16"/></g>
+        <g class="terroir" id="t-espelette" tabindex="0" role="button" aria-label="Espelette : Tablette Piment d'Espelette" data-name="Tablette Piment d'Espelette" data-text="La chaleur monte tard, une fois le chocolat fondu." data-img="assets/img/tablette-espelette.webp"><circle class="halo" cx="118.5" cy="347.1" r="9"/><circle class="dot" cx="118.5" cy="347.1" r="5"/><circle class="hit" cx="118.5" cy="347.1" r="16"/></g>
+        <g class="terroir" id="t-lavande" tabindex="0" role="button" aria-label="Sault : Tablette Miel de lavande" data-name="Tablette Miel de lavande" data-text="Un miel de Provence qui adoucit la fève sans la sucrer." data-img="assets/img/tablette-lavande.webp"><circle class="halo" cx="324" cy="314.4" r="9"/><circle class="dot" cx="324" cy="314.4" r="5"/><circle class="hit" cx="324" cy="314.4" r="16"/></g>
+        <g class="terroir" id="t-grenoble" tabindex="0" role="button" aria-label="Grenoble : Tablette Noix de Grenoble" data-name="Tablette Noix de Grenoble" data-text="Torréfiée à 150 °C, la noix garde son tanin." data-img="assets/img/tablette-grenoble.webp"><circle class="halo" cx="333.6" cy="266.4" r="9"/><circle class="dot" cx="333.6" cy="266.4" r="5"/><circle class="hit" cx="333.6" cy="266.4" r="16"/></g>
+        <g class="terroir" id="t-cervione" tabindex="0" role="button" aria-label="Cervione : Tablette Noisette de Cervione" data-name="Tablette Noisette de Cervione" data-text="Une noisette corse, pralinée à sec, sans lait." data-img="assets/img/tablette-cervione.webp"><circle class="halo" cx="447" cy="391.1" r="9"/><circle class="dot" cx="447" cy="391.1" r="5"/><circle class="hit" cx="447" cy="391.1" r="16"/></g>
+      </svg>
+      <div class="terroir-card" id="terroir-card" aria-live="polite">
+        <picture><source srcset="assets/img/tablette-guerande.webp" type="image/webp"><img src="assets/img/tablette-guerande.webp" width="600" height="900" alt="" loading="lazy"></picture>
+        <p class="terroir-card__name"></p>
+        <p class="terroir-card__text"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offre entreprise -->
+  <section class="section entreprise" id="entreprise" aria-label="Cadeaux d'affaires">
+    <div class="section__head">
+      <div><p class="eyebrow">Entreprise</p><h2 class="h2">Cadeaux d'affaires</h2></div>
+      <p class="lead">Des coffrets composés pour vos clients et vos équipes, expédiés en France et à l'international.</p>
+    </div>
+    <div class="args">
+      <div class="reveal"><h3>Personnalisation du coffret</h3><p>Sélection des pièces, manchon à vos couleurs, à partir de vingt coffrets.</p></div>
+      <div class="reveal"><h3>Message signé</h3><p>Une carte écrite à la main, glissée dans chaque coffret avant fermeture.</p></div>
+      <div class="reveal"><h3>Livraison multi-adresses</h3><p>Un fichier, autant d'adresses que de destinataires. Chronopost 72 h.</p></div>
+    </div>
+    <form class="form" data-async aria-label="Demande de proposition">
+      <div class="field"><input id="f-societe" name="societe" type="text" placeholder=" " autocomplete="organization" required><label for="f-societe">Société</label></div>
+      <div class="field"><input id="f-email" name="email" type="email" placeholder=" " autocomplete="email" required><label for="f-email">Email professionnel</label></div>
+      <div class="field"><input id="f-volume" name="volume" type="number" min="20" step="10" placeholder=" "><label for="f-volume">Volume estimé (coffrets)</label></div>
+      <div class="field"><input id="f-date" name="date" type="text" placeholder=" "><label for="f-date">Date souhaitée</label></div>
+      <div class="field field--full"><textarea id="f-message" name="message" rows="2" placeholder=" "></textarea><label for="f-message">Message</label></div>
+      <div class="form__actions">
+        <button type="submit" class="btn btn--fill"><span>Demander une proposition</span></button>
+        <p class="form__done" hidden>Bien reçu. Une réponse sous 48 h.</p>
+      </div>
+    </form>
+  </section>
+
+  <!-- Nos adresses -->
+  <section class="section adresses" id="adresses" aria-label="Nos adresses">
+    <div class="section__head">
+      <div><p class="eyebrow">Nos adresses</p><h2 class="h2">Trois adresses à Paris.</h2></div>
+      <p class="lead">Aussi en ligne, livré en 72 h par Chronopost, en France et à l'international. Offert dès 60 €.</p>
+    </div>
+    <div class="shops">
+      <article class="shop reveal">
+        <picture><source srcset="assets/img/boutique-vieux-colombier.webp" type="image/webp"><img src="assets/img/boutique-vieux-colombier.webp" width="1400" height="900" alt="Devanture de la boutique rue du Vieux Colombier" loading="lazy"></picture>
+        <div>
+          <h3>Vieux Colombier</h3>
+          <address>25 rue du Vieux Colombier, 75006 Paris</address>
+          <p class="muted">Du mardi au samedi, 10 h 30 – 19 h 30</p>
+        </div>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=25+rue+du+Vieux+Colombier+75006+Paris" target="_blank" rel="noopener"><span>Itinéraire</span></a>
+      </article>
+      <article class="shop reveal">
+        <picture><source srcset="assets/img/boutique-champ-de-mars.webp" type="image/webp"><img src="assets/img/boutique-champ-de-mars.webp" width="1400" height="900" alt="Devanture de la boutique rue du Champ de Mars" loading="lazy"></picture>
+        <div>
+          <h3>Champ de Mars</h3>
+          <address>9 rue du Champ de Mars, 75007 Paris</address>
+          <p class="muted">Du mardi au dimanche, 10 h – 19 h</p>
+        </div>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=9+rue+du+Champ+de+Mars+75007+Paris" target="_blank" rel="noopener"><span>Itinéraire</span></a>
+      </article>
+      <article class="shop reveal">
+        <picture><source srcset="assets/img/boutique-lafayette.webp" type="image/webp"><img src="assets/img/boutique-lafayette.webp" width="1400" height="900" alt="Corner Galeries Lafayette Le Gourmet, boulevard Haussmann" loading="lazy"></picture>
+        <div>
+          <h3>Galeries Lafayette Le Gourmet</h3>
+          <address>35 boulevard Haussmann, 75009 Paris</address>
+          <p class="muted">Du lundi au samedi, 9 h 30 – 20 h 30 · Dimanche, 11 h – 20 h</p>
+        </div>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Galeries+Lafayette+Le+Gourmet+35+boulevard+Haussmann+75009+Paris" target="_blank" rel="noopener"><span>Itinéraire</span></a>
+      </article>
+      <p class="adresses__note">Aussi en ligne, livré en 72 h</p>
+    </div>
+    <div class="plan" aria-hidden="true">
+      <svg viewBox="0 0 400 320">
+        <ellipse class="ring" cx="200" cy="160" rx="182" ry="128"/>
+        <path class="seine" d="M382 178 C 330 200, 290 168, 240 156 S 170 160, 140 172 S 80 205, 20 196"/>
+        <circle class="pin" cx="222" cy="104" r="5"/><text x="232" y="100">HAUSSMANN · 9e</text>
+        <circle class="pin" cx="196" cy="182" r="5"/><text x="206" y="200">VIEUX COLOMBIER · 6e</text>
+        <circle class="pin" cx="128" cy="190" r="5"/><text x="60" y="214">CHAMP DE MARS · 7e</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Journal -->
+  <section class="section" id="journal" aria-label="Journal">
+    <div class="section__head">
+      <div><p class="eyebrow">Journal</p><h2 class="h2">Journal</h2></div>
+      <p class="lead">Ce qui se passe à l'atelier, en boutique, dans la fève.</p>
+    </div>
+    <div class="posts">
+      <a class="post reveal" href="pages/journal.html">
+        <picture><source srcset="assets/img/journal-1.webp" type="image/webp"><img src="assets/img/journal-1.webp" width="1000" height="1250" alt="Sablés de Rentrée disposés sur un plan de travail" loading="lazy"></picture>
+        <time datetime="2026-09-04">4 septembre 2026</time>
+        <h3>Les Sablés de Rentrée arrivent en boutique</h3>
+        <p>Blé noir torréfié, beurre de baratte, chocolat noir cassé au couteau. Une série courte, jusqu'à épuisement.</p>
+      </a>
+      <a class="post reveal" href="pages/journal.html">
+        <picture><source srcset="assets/img/journal-2.webp" type="image/webp"><img src="assets/img/journal-2.webp" width="1000" height="1250" alt="Fèves de cacao en cours de fermentation" loading="lazy"></picture>
+        <time datetime="2026-07-18">18 juillet 2026</time>
+        <h3>Pourquoi nous fermentons les fèves 72 heures</h3>
+        <p>Ce que la fermentation change dans l'acidité d'un cacao, et pourquoi nous la prolongeons.</p>
+      </a>
+      <a class="post reveal" href="pages/journal.html">
+        <picture><source srcset="assets/img/journal-3.webp" type="image/webp"><img src="assets/img/journal-3.webp" width="1000" height="1250" alt="Comptoir du corner aux Galeries Lafayette Le Gourmet" loading="lazy"></picture>
+        <time datetime="2026-06-02">2 juin 2026</time>
+        <h3>Le corner des Galeries Lafayette Le Gourmet</h3>
+        <p>Une troisième adresse, pensée pour goûter debout : sticks, tablettes, confits à emporter.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section newsletter" aria-label="Newsletter">
+    <h2>Les lancements de collection, avant tout le monde.</h2>
+    <form data-async aria-label="Inscription à la newsletter">
+      <div class="field"><input id="nl-email" name="email" type="email" placeholder=" " autocomplete="email" required><label for="nl-email">Votre email</label></div>
+      <button type="submit" class="btn"><span>S'inscrire</span></button>
+      <p class="form__done" hidden style="grid-column: 1 / -1;">Inscription enregistrée.</p>
+    </form>
+  </section>
+
+</main>
+
+<footer class="footer" aria-label="Pied de page">
+  <div class="footer__cols">
+    <nav aria-label="La maison"><h2>La maison</h2><ul><li><a href="pages/histoire.html">Histoire</a></li><li><a href="#chefs">Les chefs</a></li><li><a href="#journal">Journal</a></li></ul></nav>
+    <nav aria-label="La boutique"><h2>La boutique</h2><ul>
+      <li><a href="produit.html">Coffrets de pralinés</a></li><li><a href="produit.html">Coffrets de ganaches</a></li><li><a href="produit.html">Coffrets de sticks</a></li><li><a href="produit.html">Coffrets de sablés bretons</a></li><li><a href="produit.html">Coffrets collection</a></li><li><a href="produit.html">Coffrets à offrir</a></li>
+      <li><a href="produit.html">Tablettes Terroirs de France</a></li><li><a href="produit.html">Tablettes Gourmandes</a></li><li><a href="produit.html">Tablettes Pures Origines</a></li>
+      <li><a href="produit.html">Confits de fruits</a></li><li><a href="produit.html">Confits chocolatés</a></li><li><a href="produit.html">Gousses de vanille</a></li><li><a href="produit.html">Petits plaisirs</a></li>
+    </ul></nav>
+    <nav aria-label="Service"><h2>Service</h2><ul><li><a href="pages/livraison.html">Livraison</a></li><li><a href="pages/retours.html">Retours</a></li><li><a href="pages/cgv.html">CGV</a></li><li><a href="pages/mentions-legales.html">Mentions légales</a></li><li><a href="pages/confidentialite.html">Confidentialité</a></li></ul></nav>
+    <nav aria-label="Nous suivre"><h2>Nous suivre</h2><ul><li><a href="https://www.instagram.com/" rel="noopener" target="_blank">Instagram</a></li><li><a href="https://www.facebook.com/" rel="noopener" target="_blank">Facebook</a></li><li><a href="mailto:contact@chocolats-yannickalleno.com">contact@chocolats-yannickalleno.com</a></li></ul></nav>
+  </div>
+  <div class="footer__bar">
+    <div class="switches">
+      <nav class="lang" aria-label="Langue"><a href="index.html" aria-current="page" lang="fr">FR</a><span aria-hidden="true">/</span><a href="en/index.html" lang="en" hreflang="en">EN</a></nav>
+      <label>Devise <select name="devise" aria-label="Devise"><option>EUR €</option><option>USD $</option><option>GBP £</option></select></label>
+    </div>
+    <p>© 2026 Les Chocolats de Yannick Alléno</p>
+    <p><em>Site conçu pour être lu, pas seulement scrollé.</em></p>
+  </div>
+</footer>
+
+</body>
+</html>
