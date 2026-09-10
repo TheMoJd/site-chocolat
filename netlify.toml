@@ -1,0 +1,56 @@
+# ---------------------------------------------------------------------------
+# Configuration Netlify — site statique, aucune étape de build.
+# Ce fichier est la source de vérité : il prend le dessus sur les réglages
+# saisis dans l'interface Netlify, donc la config reste versionnée avec le code.
+# ---------------------------------------------------------------------------
+
+[build]
+  # Le site est publié depuis la racine du repo (pas de bundler, pas de dist/).
+  # Aucune clé "command" : Netlify comprend qu'il n'y a rien à compiler.
+  publish = "."
+
+# --- En-têtes appliqués à toutes les réponses ------------------------------
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    # Indexation désactivée : ce déploiement ne doit pas apparaître dans
+    # les moteurs de recherche. Pour publier pour de vrai, supprimer cette
+    # ligne ET adapter robots.txt + la balise <meta name="robots"> du HTML.
+    X-Robots-Tag = "noindex, nofollow"
+
+    # Empêche l'affichage du site dans une iframe tierce (clickjacking).
+    X-Frame-Options = "DENY"
+
+    # Interdit au navigateur de "deviner" un type MIME différent de celui envoyé.
+    X-Content-Type-Options = "nosniff"
+
+    # Ne transmet le referrer complet qu'aux pages de même origine.
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Aucune API sensible n'est utilisée par le site : on les refuse toutes.
+    Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=()"
+
+    # Content-Security-Policy : liste blanche des origines autorisées.
+    # Les CDN listés sont ceux réellement utilisés par le site :
+    #   esm.sh    -> gsap, ScrollTrigger, lenis, split-type (main.js)
+    #   unpkg.com -> three.js et ses addons (import map dans index.html)
+    #   fonts.googleapis.com / fonts.gstatic.com -> Playfair Display + Inter
+    # 'unsafe-inline' est nécessaire pour l'import map et le script anti-blocage
+    # du préloader, tous deux inline dans index.html.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://esm.sh https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://esm.sh https://unpkg.com; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+
+# --- Cache des images ------------------------------------------------------
+# Les noms de fichiers ne contiennent pas de hash de contenu : un cache trop
+# long empêcherait les visiteurs déjà venus de voir une image remplacée.
+# 30 jours est un compromis ; pour forcer un rafraîchissement immédiat,
+# renommer le fichier (ex. hero-fallback-v2.webp).
+[[headers]]
+  for = "/assets/img/*"
+
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# NB : volontairement aucune règle de cache sur index.html, styles.css et
+# main.js. Ces fichiers gardent le comportement Netlify par défaut
+# (revalidation via ETag), donc une correction est visible immédiatement.

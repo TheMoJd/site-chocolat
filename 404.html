@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable — Les Chocolats de Yannick Alléno</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#120B08">
+  <!--
+    CSS volontairement inline et liens en chemins absolus (/) : Netlify sert
+    cette page au niveau de l'URL demandée (ex. /pages/inexistante), donc des
+    chemins relatifs comme "styles.css" pointeraient dans le vide.
+  -->
+  <style>
+    :root {
+      --c-cacao: #120B08;
+      --c-cuivre: #B87333;
+      --c-creme: #F3EBDD;
+      --c-creme-70: rgba(243, 235, 221, .72);
+      --c-line: rgba(243, 235, 221, .16);
+      --f-serif: "Playfair Display", "Times New Roman", Georgia, serif;
+      --f-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: clamp(24px, 6vw, 96px);
+      background: var(--c-cacao);
+      color: var(--c-creme);
+      font-family: var(--f-sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    main { max-width: 34rem; text-align: center; }
+    .code {
+      font-family: var(--f-serif);
+      font-size: clamp(96px, 18vw, 200px);
+      line-height: .9;
+      margin: 0;
+      color: var(--c-cuivre);
+    }
+    h1 {
+      font-family: var(--f-serif);
+      font-weight: 500;
+      font-size: clamp(24px, 3vw, 38px);
+      margin: clamp(16px, 3vw, 28px) 0 0;
+    }
+    p {
+      color: var(--c-creme-70);
+      font-size: clamp(15px, 1.05vw, 18px);
+      line-height: 1.6;
+      margin: 1rem 0 2.5rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: .95rem 2rem;
+      border: 1px solid var(--c-line);
+      border-radius: 999px;
+      color: var(--c-creme);
+      text-decoration: none;
+      font-size: .875rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: background-color .4s cubic-bezier(.2, .7, .2, 1),
+                  border-color .4s cubic-bezier(.2, .7, .2, 1),
+                  color .4s cubic-bezier(.2, .7, .2, 1);
+    }
+    .btn:hover, .btn:focus-visible {
+      background: var(--c-creme);
+      border-color: var(--c-creme);
+      color: var(--c-cacao);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="code">404</p>
+    <h1>Cette page n'existe pas</h1>
+    <p>Le lien que vous avez suivi est peut-être obsolète, ou l'adresse a été mal recopiée.</p>
+    <a class="btn" href="/">Retour à l'accueil</a>
+  </main>
+</body>
+</html>

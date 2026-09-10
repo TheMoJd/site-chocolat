@@ -1,0 +1,5 @@
+# Déploiement de démonstration : indexation refusée.
+# Pour ouvrir le site aux moteurs, remplacer "Disallow: /" par "Allow: /",
+# retirer X-Robots-Tag de netlify.toml et la <meta name="robots"> d'index.html.
+User-agent: *
+Disallow: /
